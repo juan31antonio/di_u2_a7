@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 export default function FeedbackForm() {
-  const [name, setName] = useState('');
+  let nombre;
 
   function handleClick() {
-    setName(prompt('¿Cuál es tu nombre?'));
-    alert(`Hola, ${name}!`);
+    nombre = prompt('¿Cuál es tu nombre?');
+    alert(`Hola, ${nombre}!`);
   }
 
   return (

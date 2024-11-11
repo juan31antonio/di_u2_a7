@@ -7,6 +7,15 @@ export default function Gallery() {
 
   function handleNextClick() {
     setIndex(index + 1);
+    if(index==11){
+      setIndex(0);
+    }
+  }
+  function handlePreviousClick() {
+    setIndex(index - 1);
+    if(index==0){
+      setIndex(11);
+    }
   }
 
   function handleMoreClick() {
@@ -18,6 +27,9 @@ export default function Gallery() {
     <>
       <button onClick={handleNextClick}>
         Siguiente
+      </button>
+      <button onClick={handlePreviousClick}>
+        Anterior
       </button>
       <h2>
         <i>{sculpture.name} </i> 

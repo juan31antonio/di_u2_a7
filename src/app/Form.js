@@ -1,33 +1,35 @@
+import { useState } from 'react';
+
 export default function Form() {
-    let firstName = '';
-    let lastName = '';
+    const [nombre, setNombre] = useState('');
+    const [apellido, setApellido] = useState('');
   
     function handleFirstNameChange(e) {
-      firstName = e.target.value;
+      setNombre(e.target.value);
     }
   
     function handleLastNameChange(e) {
-      lastName = e.target.value;
+      setApellido(e.target.value);
     }
   
     function handleReset() {
-      firstName = '';
-      lastName = '';
+      setNombre('');
+      setApellido('');
     }
   
     return (
       <form onSubmit={e => e.preventDefault()}>
         <input
           placeholder="Nombre"
-          value={firstName}
+          value={nombre}
           onChange={handleFirstNameChange}
         />
         <input
           placeholder="Apellido"
-          value={lastName}
+          value={apellido}
           onChange={handleLastNameChange}
         />
-        <h1>Hola, {firstName} {lastName}</h1>
+        <h1>Hola, {nombre} {apellido}</h1>
         <button onClick={handleReset}>Reiniciar</button>
       </form>
     );
