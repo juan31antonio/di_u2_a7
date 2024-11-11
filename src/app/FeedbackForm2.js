@@ -7,7 +7,7 @@ export default function FeedbackForm() {
     nombre = prompt('¿Cuál es tu nombre?');
     alert(`Hola, ${nombre}!`);
   }
-
+  //No funciona, ya que no se renderiza hasta que no termina la accion del oncLICK
   return (
     <button onClick={handleClick}>
       Saludar
